@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: theme("fontFamily.body");
+  }
+
+  body {
+    @apply min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+    background-image: theme("backgroundImage.mesh");
+    background-attachment: fixed;
+  }
+
+  * {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/20 bg-white/60 shadow-glass backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/60;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-500 via-sky-400 to-emerald-400 bg-clip-text text-transparent;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-200 dark:border-slate-700 dark:bg-slate-900/80 dark:text-white dark:focus:ring-brand-900;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-brand-600 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:scale-[1.01] hover:shadow-brand-500/30;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand-300 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100;
+  }
+}
